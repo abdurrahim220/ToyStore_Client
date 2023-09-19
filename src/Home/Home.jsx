@@ -13,10 +13,10 @@ const Home = () => {
         <div>
 
             <Banner></Banner>
-            <ViewReview></ViewReview>
             <Gallery></Gallery>
             <AosData></AosData>
             <ReactTab></ReactTab>
+            <ViewReview></ViewReview>
             <ClientReview></ClientReview>
             
         </div>

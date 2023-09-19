@@ -10,7 +10,7 @@ const GalleryCard = ({ item }) => {
             <div class="w-full p-1 md:p-2">
                 <img
                     alt="gallery"
-                    className="block animate-bounce h-full w-full rounded-lg object-cover object-center"
+                    className="block h-full w-full rounded-lg object-cover object-center"
                     src={image} />
             </div>
         </div>

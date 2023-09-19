@@ -22,17 +22,17 @@ const Banner = () => {
   ];
 
   return (
-    <div>
+    
       <Carousel className="">
         {images.map((image, index) => {
           return (
-            <div className="h-[650px]">
-              <img src={image.url} key={index} alt="" />
+            <div key={index} className=" lg:h-[650px]">
+              <img src={image.url}  alt="" />
             </div>
           );
         })}
       </Carousel>
-    </div>
+   
   );
 };
 
