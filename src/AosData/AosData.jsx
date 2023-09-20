@@ -97,12 +97,6 @@ const AosData = () => {
           </button>
         )}
       </div>
-
-      {/* second one is right */}
-
-      {/* Third one is also left */}
-
-      {/* last one is also right */}
     </div>
   );
 };

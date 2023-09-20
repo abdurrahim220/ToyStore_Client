@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import GalleryCard from "./GalleryCard";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/grid";
 import "swiper/css/pagination";
 import "./styles.css";
+
 import { EffectCoverflow, Pagination } from "swiper/modules";
 const Gallery = () => {
   const [gallery, setGallery] = useState([]);

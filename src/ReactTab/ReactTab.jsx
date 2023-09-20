@@ -22,11 +22,11 @@ const ReactTab = () => {
     return (
         <div className='my-8'>
 
-            <h2 className='text-center text-3xl font-bold mb-7'>Category By <span className='text-yellow-400'>Group Toys</span></h2>
+            <h2 className='text-center text-2xl lg:text-4xl  font-bold pb-7'>Category By <span className='text-yellow-400'>Group Toys</span></h2>
 
             <div className='center flex justify-center'>
-                <Tabs>
-                    <TabList>
+                <Tabs className="py-5">
+                    <TabList className="py-3 flex items-center justify-center">
                         <Tab onClick={() => handleTabClick("Marvel Group")}
                             className={`tab  tab2 remote ${activeTab == "Marvel Group" ? " bg-black text-white" : ""
                                 }`}>Marvel Group</Tab>

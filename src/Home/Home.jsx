@@ -10,7 +10,7 @@ import ViewReview from '../ClientReview/ViewReview';
 const Home = () => {
     useTitle('Home')
     return (
-        <div>
+        <div className='font-mono'>
 
             <Banner></Banner>
             <Gallery></Gallery>

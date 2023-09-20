@@ -1,28 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import ReviewCard from './ReviewCard';
+import React, { useEffect, useState } from "react";
+import ReviewCard from "./ReviewCard";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+import { EffectCards } from "swiper/modules";
 
 const ViewReview = () => {
-    const [reviewer,setReviewer] = useState([])
-    useEffect(()=>{
-        fetch(`https://toy-store-server-delta.vercel.app/allToysReview`)
-        .then(res=>res.json())
-        .then(data =>{
-            // console.log(data);
-            setReviewer(data)
-        })
-    },[])
-    return (
-        <div className='my-10'>
-          <h2 className='text-center my-2 text-2xl font-bold mt-3 mb-3'>Total {reviewer.length} number of <span className='text-blue-400'>Client Review</span></h2>
+  const [reviewer, setReviewer] = useState([]);
 
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-2'>
-            {
-                reviewer.map(review => <ReviewCard key={review._id} review={review}></ReviewCard>)
-            }
-          </div>
+  useEffect(() => {
+    fetch(`https://toy-store-server-delta.vercel.app/allToysReview`)
+      .then((res) => res.json())
+      .then((data) => {
+        setReviewer(data);
+      });
+  }, []);
 
-        </div>
-    );
+  return (
+    <div className="py-16 pb-5">
+      <h2 className="text-center text-2xl lg:text-3xl font-bold py-4">
+        Our Total {reviewer.length} numbers of <br />
+        <span className="text-blue-400 py-2"> Client Review</span>
+      </h2>
+
+      <Swiper
+        effect={"cards"}
+        grabCursor={true}
+        modules={[EffectCards]}
+        className="mySwiper w-96"
+      >
+        {reviewer.map((review) => (
+        <SwiperSlide className="flex items-center justify-center rounded-[18px]" key={review._id}>
+            <ReviewCard  review={review}></ReviewCard>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 };
 
 export default ViewReview;

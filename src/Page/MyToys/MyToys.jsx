@@ -8,10 +8,6 @@ import Swal from 'sweetalert2';
 const MyToys = () => {
     const { user } = useContext(AuthContext)
     const [addToys, setAddToys] = useState([])
-    
-
-    
-
     useTitle('MyToys')
 
     useEffect(() => {
@@ -67,7 +63,6 @@ const MyToys = () => {
        
     }
 
-
     const handleaDec = () => {
         fetch(`https://toy-store-server-delta.vercel.app/descending?email=${user?.email}`)
         .then(res => res.json())
@@ -77,17 +72,16 @@ const MyToys = () => {
         
     }
 
-
     return (
-        <div className='my-5'>
-            <div>
+        <div className='py-5'>
+            <div className='flex gap-5 py-5 justify-center items-center'>
                 {/* Add your form elements here */}
 
                 <button className='btn btn-primary' onClick={handleaAcc}>Sort Ascending</button>
                 <button className='btn btn-primary' onClick={handleaDec}>Sort Descending</button>
             </div>
 
-            <div className="overflow-x-auto w-full my-3">
+            <div className="overflow-x-auto w-full py-3">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
@@ -102,7 +96,7 @@ const MyToys = () => {
                             <th>Category</th>
                             <th>Rating</th>
                             <th>Description</th>
-                            <th></th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>

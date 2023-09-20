@@ -45,10 +45,10 @@ const AddToys = () => {
 
 
     return (
-        <div className="container my-7">
-            <h1>Adding Toys Are here</h1>
+        <div className="container mx-auto  py-14">
+            <h1 className='text-center pb-3 text-2xl lg:text-4xl font-bold font-serif'>Adding Toys Are here</h1>
 
-            <form onSubmit={handleAddToys}>
+            <form className='border-2 py-5 px-5' onSubmit={handleAddToys}>
                 {/* row 1 */}
                 <div className="md:flex gap-4 mb-2">
                     <div className="form-control  md:w-1/2">
@@ -147,7 +147,7 @@ const AddToys = () => {
                         <input type="text" name='description' placeholder='detail description' className='input input-bordered w-fill' required/>
                     </label>
                 </div>
-                <input type="submit" value="ADD TOYS TO STORE" className="btn btn-block mt-2" required/>
+                <input type="submit" value="ADD TOYS TO STORE" className="btn btn-block my-4" required/>
             </form>
         </div>
     );
